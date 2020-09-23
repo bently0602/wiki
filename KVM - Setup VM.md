@@ -8,8 +8,5 @@ systemctl status libvirtd
 
 systemctl enable --now libvirtd
 
-lsmod | grep -i kvm
-
-virt-install --virt-type qemu --name=winB-vm --os-variant=win2k --vcpu=1 --ram=256 --graphics spice,listen=* --cdrom=EN_WIN2000_PRO_SP4.ISO --network network=default --disk demoB.img,size=6
-
-spice://XXXXXXXXXXXXXXX:5900
+qemu-img create -f qcow2 -o preallocation=metadata /root/win2k.qcow2 10G
+qemu-system-i386 -enable-kvm -L pc-bios -m 256 -vnc :0 -hda win2k.qcow2 -cdrom win2000DC.iso -boot d
