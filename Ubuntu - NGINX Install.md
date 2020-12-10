@@ -2,7 +2,7 @@
 
 ## Install
 
-```
+```bash
 apt install nginx certbot python3-certbot-nginx
 ```
 
@@ -10,7 +10,10 @@ apt install nginx certbot python3-certbot-nginx
 
 ### Auto renew certs cron
 
+```bash
 crontab -e
+```
+
 Add:
 
 ```
@@ -60,13 +63,21 @@ server {
 }
 ```
 
+```bash
 nginx -s reload
+```
 
 ## Install certs 
 
+```bash
 certbot --register-unsafely-without-email --nginx -d DNSADDRESS
+```
+
 OR
+
+```bash
 certbot --register-unsafely-without-email -d DNSADDRESS
+```
 
 ## Last Setup
 
@@ -79,5 +90,7 @@ Uncomment:
 # ssl_certificate_key
 ```
 
+```bash
 nginx -s reload
+```
 
