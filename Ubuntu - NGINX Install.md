@@ -100,3 +100,19 @@ Uncomment:
 nginx -s reload
 ```
 
+
+## Basic Auth
+
+```bash
+apt install apache2-utils
+htpasswd -c /etc/nginx/.htpasswd nginx
+```
+
+Add to nginx location section
+
+```
+location / {
+        auth_basic "Private Property";
+        auth_basic_user_file /etc/nginx/.htpasswd;
+}
+```
