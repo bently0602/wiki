@@ -116,3 +116,7 @@ location / {
         auth_basic_user_file /etc/nginx/.htpasswd;
 }
 ```
+
+```bash
+nginx -s reload
+```
