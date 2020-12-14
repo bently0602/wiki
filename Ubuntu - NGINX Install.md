@@ -22,6 +22,12 @@ Add:
 
 ### nginx config
 
+Generate dhparams
+
+```bash
+openssl dhparam -out /etc/nginx/dhparam.pem 4096.
+```
+
 Edit /etc/nginx/sites-enabled/default
 
 ```
