@@ -39,8 +39,8 @@ kill session:
 ## Windows (tabs)
 
     c           new window
-	n			next window (carousel like)
-	p			previous window (carousel like)
+    n		next window (carousel like)
+    p		previous window (carousel like)
     ,           name window
     w           list windows
     f           find window
@@ -73,10 +73,17 @@ kill session:
     ?  list shortcuts
     :  prompt
 
+## Troubleshoot
+
+- Resize screen from previous session's screen size
+
+	:resize-window -A
+
 Resources:
 
 * [cheat sheet](http://cheat.errtheblog.com/s/tmux/)
-
+* [StackOverflow - Resize](https://stackoverflow.com/questions/7814612/is-there-any-way-to-redraw-tmux-window-when-switching-smaller-monitor-to-bigger)
+ 
 Notes:
 
 * You can cmd+click URLs to open in iTerm.
