@@ -40,3 +40,7 @@ Syspatch
 
 ###
 pkg_add -u
+
+http://webcache.googleusercontent.com/search?q=cache:mTbhAKM1zTMJ:rtate.se/technology/bsd/guide/2016/06/20/SSHGuard-OpenBSD.html&cd=5&hl=en&ct=clnk&gl=us&client=safari
+
+
