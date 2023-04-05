@@ -43,4 +43,9 @@ pkg_add -u
 
 http://webcache.googleusercontent.com/search?q=cache:mTbhAKM1zTMJ:rtate.se/technology/bsd/guide/2016/06/20/SSHGuard-OpenBSD.html&cd=5&hl=en&ct=clnk&gl=us&client=safari
 
+https://www.openbsd.org/faq/faq15.html
+
+https://www.openbsdhandbook.com/openbsd_for_linux_users/
+
+https://www.openbsdhandbook.com/system_management/updates/
 
