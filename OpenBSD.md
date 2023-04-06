@@ -1,14 +1,15 @@
- 
+# OpenBSD
+
 ## Add packages 
 pkg_add vim 
  
 ## Firewall 
 
 ### Base configuration
-vim /etc/pf.conf 
- 
-Add: (https://www.digitalocean.com/community/tutorials/how-to-configure-packet-filter-pf-on-freebsd-12-1) 
- 
+
+1. Modify /etc/pf.conf 
+2. Add: 
+` 
 set skip on lo0 
  
 block all 
@@ -18,28 +19,35 @@ pass out proto { tcp udp } to port { 22 53 80 123 443 }
  
 pass out inet proto icmp icmp-type { echoreq } 
  
-\# Port build user does not need network 
+# Port build user does not need network 
 block return out log proto {tcp udp} user _pbuild 
- 
-### Restart PF 
-reboot 
- 
-### Check Rules 
-pfctl -s rules 
+`
+3. Restart PF 
+reboot
+ OR
+`
+pfctl -vnf /etc/pf.conf
+pfctl -f /etc/pf.conf
+`
+4. Check Rules 
+`pfctl -s rules`
  
 ## Updating 
 
-## Update security sources
-update sources 
-Syspatch –c 
+### Update Security Sources
 
-### Update security
-Syspatch 
+#### Update Sources 
+`syspatch –c`
+
+#### Update security
+`syspatch`
 
 ### Package Updates
+`pkg_add -u`
 
-###
-pkg_add -u
+## Links
+
+https://www.digitalocean.com/community/tutorials/how-to-configure-packet-filter-pf-on-freebsd-12-1
 
 http://webcache.googleusercontent.com/search?q=cache:mTbhAKM1zTMJ:rtate.se/technology/bsd/guide/2016/06/20/SSHGuard-OpenBSD.html&cd=5&hl=en&ct=clnk&gl=us&client=safari
 
