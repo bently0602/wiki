@@ -29,6 +29,7 @@ pass out inet proto icmp icmp-type { echoreq }
 \# Port build user does not need network 
 block return out log proto {tcp udp} user _pbuild 
 `
+
 3. Restart PF 
 reboot
  OR
