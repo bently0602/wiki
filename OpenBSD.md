@@ -1,8 +1,15 @@
 # OpenBSD
 
 ## Add packages 
-pkg_add vim 
- 
+`pkg_add vim`
+
+### Add ZSH and BASH
+`pkg_add bash zsh`
+
+#### Change Shell for User
+`chsh -s bash`
+Recommend you dont do this. Sheels are installed in /usr/local/bin. KSH is in /bin
+
 ## Firewall 
 
 ### Base configuration
@@ -44,6 +51,18 @@ pfctl -f /etc/pf.conf
 
 ### Package Updates
 `pkg_add -u`
+
+## Admin
+
+### Users
+
+#### Add User
+`useradd -m username -s /bin/sh`
+The account will not be able to be logged into with out a password.
+-m gives a home directory
+
+#### Change User Password
+`passwd username`
 
 ## Links
 
