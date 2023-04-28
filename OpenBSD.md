@@ -60,7 +60,7 @@ pfctl -f /etc/pf.conf
 ### Users
 
 #### Add User
-```useradd -m username -s /bin/sh```
+```useradd -m -s /bin/sh username```
 
 The account will not be able to be logged into with out a password.
 
