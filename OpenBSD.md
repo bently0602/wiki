@@ -16,7 +16,7 @@ Recommend you dont do this. Sheels are installed in /usr/local/bin. KSH is in /b
 
 1. Modify /etc/pf.conf 
 2. Add: 
-` 
+``` 
 set skip on lo0 
  
 block all 
@@ -28,7 +28,7 @@ pass out inet proto icmp icmp-type { echoreq }
  
 \# Port build user does not need network 
 block return out log proto {tcp udp} user _pbuild 
-`
+```
 
 3. Restart PF 
 reboot
