@@ -7,7 +7,8 @@
 `pkg_add bash zsh`
 
 #### Change Shell for User
-`chsh -s bash`
+```chsh -s bash```
+
 Recommend you dont do this. Sheels are installed in /usr/local/bin. KSH is in /bin
 
 ## Firewall 
@@ -26,19 +27,20 @@ pass out proto { tcp udp } to port { 22 53 80 123 443 }
  
 pass out inet proto icmp icmp-type { echoreq } 
  
-\# Port build user does not need network 
+# Port build user does not need network 
 block return out log proto {tcp udp} user _pbuild 
 ```
 
 3. Restart PF 
 reboot
- OR
-`
+OR
+```
 pfctl -vnf /etc/pf.conf
 pfctl -f /etc/pf.conf
-`
+```
+
 4. Check Rules 
-`pfctl -s rules`
+```pfctl -s rules```
  
 ## Updating 
 
@@ -58,12 +60,14 @@ pfctl -f /etc/pf.conf
 ### Users
 
 #### Add User
-`useradd -m username -s /bin/sh`
+```useradd -m username -s /bin/sh```
+
 The account will not be able to be logged into with out a password.
+
 -m gives a home directory
 
 #### Change User Password
-`passwd username`
+```passwd username```
 
 ## Links
 
