@@ -26,7 +26,7 @@ pass out proto { tcp udp } to port { 22 53 80 123 443 }
  
 pass out inet proto icmp icmp-type { echoreq } 
  
-# Port build user does not need network 
+\# Port build user does not need network 
 block return out log proto {tcp udp} user _pbuild 
 `
 3. Restart PF 
