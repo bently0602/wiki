@@ -26,6 +26,10 @@ attach to named:
 
     tmux a -t myname
 
+attach to number:
+
+    tmux attach -t 1
+
 kill session:
 
     tmux kill-session -t myname
