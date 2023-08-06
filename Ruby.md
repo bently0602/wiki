@@ -25,3 +25,19 @@ rbenv -v
 ```
 
 ## Install Ruby
+
+```
+rbenv install -l
+```
+
+```
+rbenv install 3.0.2
+```
+
+```
+rbenv global 3.0.2
+```
+
+```
+ruby --version
+```
