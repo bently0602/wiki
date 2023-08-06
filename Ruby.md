@@ -1,5 +1,7 @@
 # Install Ruby
 
+https://phoenixnap.com/kb/install-ruby-ubuntu
+
 ## Install rbenv
 
 ```
