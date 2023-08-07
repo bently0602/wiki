@@ -1,49 +1,41 @@
 # Install Ruby
 
-https://phoenixnap.com/kb/install-ruby-ubuntu
+[https://phoenixnap.com/kb/install-ruby-ubuntu
+](https://github.com/postmodern/chruby)
 
-## Install rbenv
+https://github.com/postmodern/ruby-install#readme
 
-```
-apt install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
-```
-
-```
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
-```
+## Install chruby
 
 ```
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-source ~/.bashrc
+wget https://github.com/postmodern/chruby/releases/download/v0.3.9/chruby-0.3.9.tar.gz
+tar -xzvf chruby-0.3.9.tar.gz
+cd chruby-0.3.9/
+make install
 ```
 
-OR
+## Install install-ruby
 
 ```
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(rbenv init -)"' >> ~/.zshrc
-source ~/.zshrc
+wget https://github.com/postmodern/ruby-install/releases/download/v0.9.1/ruby-install-0.9.1.tar.gz
+tar -xzvf ruby-install-0.9.1.tar.gz
+cd ruby-install-0.9.1/
+make install
 ```
 
-```
-rbenv -v
-```
-
-## Install Ruby
+## Install ruby
 
 ```
-rbenv install -l
+ruby-install
 ```
 
 ```
-rbenv install 3.0.2
+ruby-install ruby 3.2.2
 ```
 
 ```
-rbenv global 3.0.2
+chruby 3.2.2
 ```
 
-```
-ruby --version
-```
+
+]
