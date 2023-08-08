@@ -27,19 +27,19 @@ cd ~/.ruby-install
 make install
 ```
 
-## Add to home
+## Add to home (Bash only)
 
 Ubuntu:
 
 ```
-echo 'export PATH="$HOME/.chruby/bin:$PATH"' >> ~/.bashrc
+echo 'source /usr/local/share/chruby/chruby.sh' >> ~/.bashrc
 echo 'export PATH="$HOME/.ruby-install/bin:$PATH"' >> ~/.bashrc
 ```
 
 Other Bash:
 
 ```
-echo 'export PATH="$HOME/.chruby/bin:$PATH"' >> ~/.bash_profile
+echo 'source /usr/local/share/chruby/chruby.sh' >> ~/.bash_profile
 echo 'export PATH="$HOME/.ruby-install/bin:$PATH"' >> ~/.bash_profile
 ```
 
