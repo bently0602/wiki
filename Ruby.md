@@ -57,7 +57,7 @@ See avail to install:
 ruby-install
 ```
 
-Install:
+Install (by default to /opt/rubies):
 
 ```
 ruby-install ruby 3.2.2
