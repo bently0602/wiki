@@ -30,18 +30,21 @@ make install
 ## Add to home
 
 Ubuntu:
+
 ```
 echo 'export PATH="$HOME/.chruby/bin:$PATH"' >> ~/.bashrc
 echo 'export PATH="$HOME/.ruby-install/bin:$PATH"' >> ~/.bashrc
 ```
 
 Other Bash:
+
 ```
 echo 'export PATH="$HOME/.chruby/bin:$PATH"' >> ~/.bash_profile
 echo 'export PATH="$HOME/.ruby-install/bin:$PATH"' >> ~/.bash_profile
 ```
 
 Then source it so current shell is sees new HOME:
+
 ```
 source ~/.bashrc
 ```
@@ -49,16 +52,19 @@ source ~/.bashrc
 ## Install ruby
 
 See avail to install:
+
 ```
 ruby-install
 ```
 
 Install:
+
 ```
 ruby-install ruby 3.2.2
 ```
 
 See avail to switch:
+
 ```
 chruby
 ```
