@@ -4,15 +4,15 @@
 
 ### Create Service User
 
-Name = "_service" Home = "/home/service"
+Name = "_caddy" Home = "/home/caddy"
 ```
-useradd -g =uid -c "I am a service that does stuff." -L daemon -s /sbin/nologin -d /home/service -m _service
+useradd -g =uid -c "Caddy service user" -L daemon -s /sbin/nologin -d /home/caddy -m _caddy
 ```
 
 ### Login as User
 
 ```
-doas -u _service /bin/ksh -l
+doas -u _caddy /bin/ksh -l
 ```
 
 ### Download Caddy
