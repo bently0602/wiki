@@ -26,8 +26,8 @@ set skip on lo0
 # Block all traffic by default
 block all
  
-# Allow incoming TCP traffic to port 22 (SSH)
-pass in proto tcp to port { 22 }
+# Allow incoming TCP traffic to port 22 (SSH), 80 (HTTP), 443 (HTTPS)
+pass in proto tcp to port { 22 80 443 }
 
 # Allow outgoing TCP and UDP traffic to ports 22 (SSH), 53 (DNS), 80 (HTTP), 123 (NTP), 443 (HTTPS)
 pass out proto { tcp udp } to port { 22 53 80 123 443 }
