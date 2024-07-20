@@ -9,11 +9,18 @@ Name = "_service" Home = "/home/service"
 useradd -g =uid -c "I am a service that does stuff." -L daemon -s /sbin/nologin -d /home/service -m _service
 ```
 
+### Login as User
+
+```
+doas -u _service /bin/ksh -l
+```
+
 ### Download Caddy
 
+```
 wget -O caddy https://caddyserver.com/api/download?os=openbsd&arch=amd64
 chmod +x caddy
-
+```
 
 ## OpenBSD HTTPD
 https://citizen428.net/blog/self-hosting-static-site-openbsd-httpd-relayd/
