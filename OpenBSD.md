@@ -15,6 +15,8 @@ Recommend you dont do this. Shells are installed in /usr/local/bin. KSH is in /b
 
 ### Base configuration
 
+pfctl is the main firewall command.
+
 1. Modify /etc/pf.conf 
 2. Add: 
 ``` 
@@ -31,11 +33,17 @@ pass out inet proto icmp icmp-type { echoreq }
 block return out log proto {tcp udp} user _pbuild 
 ```
 
-3. Restart PF 
-reboot
+3. Restart PF
+
+Reboot
 OR
+Check firewall rules:
 ```
 pfctl -vnf /etc/pf.conf
+```
+
+Reload pf:
+```
 pfctl -f /etc/pf.conf
 ```
 
