@@ -55,6 +55,9 @@ pfctl -f /etc/pf.conf
 ### Package and Package Dependency Updates
 `pkg_add -uU`
 
+### Configuration Merge Diff
+`sysmerge -d`
+
 ## Admin
 
 ### Users
