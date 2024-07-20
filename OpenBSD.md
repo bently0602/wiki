@@ -9,7 +9,7 @@
 #### Change Shell for User
 ```chsh -s bash```
 
-Recommend you dont do this. Sheels are installed in /usr/local/bin. KSH is in /bin
+Recommend you dont do this. Shells are installed in /usr/local/bin. KSH is in /bin
 
 ## Firewall 
 
@@ -52,8 +52,8 @@ pfctl -f /etc/pf.conf
 #### Update security
 `syspatch`
 
-### Package Updates
-`pkg_add -u`
+### Package and Package Dependency Updates
+`pkg_add -uU`
 
 ## Admin
 
