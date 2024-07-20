@@ -19,18 +19,24 @@ pfctl is the main firewall command.
 
 1. Modify /etc/pf.conf 
 2. Add: 
-``` 
-set skip on lo0 
+```
+# Skip filtering on the loopback interface (lo0)
+set skip on lo0
  
-block all 
+# Block all traffic by default
+block all
  
-pass in proto tcp to port { 22 } 
-pass out proto { tcp udp } to port { 22 53 80 123 443 } 
+# Allow incoming TCP traffic to port 22 (SSH)
+pass in proto tcp to port { 22 }
+
+# Allow outgoing TCP and UDP traffic to ports 22 (SSH), 53 (DNS), 80 (HTTP), 123 (NTP), 443 (HTTPS)
+pass out proto { tcp udp } to port { 22 53 80 123 443 }
  
-pass out inet proto icmp icmp-type { echoreq } 
+# Allow outgoing ICMP traffic for echo requests (ping)
+pass out inet proto icmp icmp-type { echoreq }
  
-# Port build user does not need network 
-block return out log proto {tcp udp} user _pbuild 
+# Block and log outgoing TCP and UDP traffic for the user _pbuild, returning an error message
+block return out log proto {tcp udp} user _pbuild
 ```
 
 3. Restart PF
