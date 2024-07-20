@@ -9,6 +9,10 @@ Name = "_service" Home = "/home/service"
 useradd -g =uid -c "I am a service that does stuff." -L daemon -s /sbin/nologin -d /home/service -m _service
 ```
 
+### Download Caddy
+
+wget -O caddy https://caddyserver.com/api/download?os=openbsd&arch=amd64
+chmod +x caddy
 
 
 ## OpenBSD HTTPD
