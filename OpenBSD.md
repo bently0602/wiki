@@ -43,12 +43,13 @@ block return out log proto {tcp udp} user _pbuild
 
 Reboot
 OR
-Check firewall rules:
+
+- Check firewall rules:
 ```
 pfctl -vnf /etc/pf.conf
 ```
 
-Reload pf:
+- Reload pf:
 ```
 pfctl -f /etc/pf.conf
 ```
