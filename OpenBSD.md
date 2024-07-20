@@ -94,6 +94,20 @@ The account will not be able to be logged into with out a password.
 #### Change User Password
 ```passwd username```
 
+### Enable DOAS
+
+Edit /etc/doas.conf:
+
+```
+vim /etc/doas.conf
+```
+
+Add:
+
+```
+
+```
+
 ## Links
 
 https://www.digitalocean.com/community/tutorials/how-to-configure-packet-filter-pf-on-freebsd-12-1
@@ -105,4 +119,7 @@ https://www.openbsd.org/faq/faq15.html
 https://www.openbsdhandbook.com/openbsd_for_linux_users/
 
 https://www.openbsdhandbook.com/system_management/updates/
+
+https://docs.vultr.com/introduction-to-doas-on-openbsd
+
 
