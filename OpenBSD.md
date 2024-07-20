@@ -58,6 +58,13 @@ pfctl -f /etc/pf.conf
 ### Configuration Merge Diff
 `sysmerge -d`
 
+### Typical Update
+```
+syspatch
+pkg_add -uU
+sysmerge -d
+```
+
 ## Admin
 
 ### Users
