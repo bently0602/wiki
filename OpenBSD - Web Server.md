@@ -46,7 +46,12 @@ pass in on egress proto tcp from any to any port 80 rdr-to 127.0.0.1
 /etc/Caddyfile
 
 ```
-example.com {
+http://example.com:8080 {
+        root * /var/www/htdocs/example.com
+        encode gzip
+        file_server
+}
+http://www.example.com:8080 {
         root * /var/www/htdocs/example.com
         encode gzip
         file_server
