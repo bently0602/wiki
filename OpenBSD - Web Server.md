@@ -29,6 +29,24 @@ wget -q -O caddy https://caddyserver.com/api/download?os=openbsd&arch=amd64
 chmod +x caddy
 ```
 
+### Back as root
+
+```
+exit
+```
+
+### Caddyfile
+
+/etc/Caddyfile
+
+```
+example.com {
+        root * /var/www/htdocs/example.com
+        encode gzip
+        file_server
+}
+```
+
 ## OpenBSD HTTPD
 https://citizen428.net/blog/self-hosting-static-site-openbsd-httpd-relayd/
 https://dev.to/nabbisen/setting-up-openbsds-httpd-web-server-4p9f
