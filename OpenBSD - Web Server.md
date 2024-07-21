@@ -16,7 +16,29 @@ Name = "_caddy" Home = "/home/caddy"
 useradd -g =uid -c "Caddy service user" -L daemon -s /sbin/nologin -d /home/caddy -m _caddy
 ```
 
+### Caddyfile
 
+/etc/Caddyfile
+
+```
+{
+	log default {
+		output file /var/log/caddy
+		format json
+	}
+}
+
+https://example.com {
+        root * /var/www/htdocs/example.com
+        encode gzip
+        file_server
+}
+https://www.example.com {
+        root * /var/www/htdocs/example.com
+        encode gzip
+        file_server
+}
+```
 
 
 
