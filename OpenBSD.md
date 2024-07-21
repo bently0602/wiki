@@ -102,10 +102,10 @@ Edit /etc/doas.conf:
 vim /etc/doas.conf
 ```
 
-Add:
+Add (from OpenBSD examples):
 
 ```
-
+permit keepenv :wheel
 ```
 
 ## Links
