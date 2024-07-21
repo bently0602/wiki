@@ -38,7 +38,7 @@ exit
 ### PF
 
 ```
-pass in on egress proto tcp from any to any port 80 rdr-to 127.0.0.1
+pass in on egress proto tcp from any to any port 80 rdr-to 127.0.0.1 port 8080
 ```
 
 ### Caddyfile
