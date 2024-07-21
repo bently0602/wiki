@@ -5,7 +5,8 @@
 ### Create website folder
 
 ```
-mkdir /var/www/htdocs/umpecca.com
+mkdir /var/www/htdocs/example.com
+echo "<b>TEST</b>" >> /var/www/htdocs/example.com/index.html
 ```
 
 ### Create Service User
