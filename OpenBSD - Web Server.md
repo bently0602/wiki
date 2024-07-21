@@ -16,32 +16,38 @@ Name = "_caddy" Home = "/home/caddy"
 useradd -g =uid -c "Caddy service user" -L daemon -s /sbin/nologin -d /home/caddy -m _caddy
 ```
 
-### Login as User
+
+
+
+
+
+### OLD
+Login as User
 
 ```
 doas -u _caddy /bin/ksh -l
 ```
 
-### Download Caddy
+Download Caddy
 
 ```
 wget -q -O caddy https://caddyserver.com/api/download?os=openbsd&arch=amd64
 chmod +x caddy
 ```
 
-### Back as root
+Back as root
 
 ```
 exit
 ```
 
-### PF
+PF
 
 ```
 pass in on egress proto tcp from any to any port 80 rdr-to 127.0.0.1 port 8080
 ```
 
-### Caddyfile
+Caddyfile
 
 /etc/Caddyfile
 
