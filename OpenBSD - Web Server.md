@@ -2,6 +2,12 @@
 
 ## Caddy
 
+### Create website folder
+
+```
+mkdir /var/www/htdocs/umpecca.com
+```
+
 ### Create Service User
 
 Name = "_caddy" Home = "/home/caddy"
