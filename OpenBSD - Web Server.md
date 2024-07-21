@@ -16,9 +16,16 @@ Name = "_caddy" Home = "/home/caddy"
 useradd -g =uid -c "Caddy service user" -L daemon -s /sbin/nologin -d /home/caddy -m _caddy
 ```
 
+### Download Caddy
+
+```
+wget -q -O /usr/local/sbin/caddy https://caddyserver.com/api/download?os=openbsd&arch=amd64
+chmod +x /usr/local/sbin/caddy
+```
+
 ### Caddyfile
 
-/etc/Caddyfile
+/etc/caddyfile
 
 ```
 {
@@ -40,8 +47,30 @@ https://www.example.com {
 }
 ```
 
+### rc.d
 
+/etc/rc.d/caddy
 
+```
+#!/bin/ksh
+
+daemon="/usr/local/sbin/caddy"
+daemon_user="_caddy"
+daemon_flags="run --config /etc/caddyfile"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
+```
+
+```
+chmod 0555 /etc/rc.d/caddy
+rcctl -d enable caddy
+rcctl -d start caddy
+```
 
 ### OLD
 Login as User
