@@ -47,6 +47,12 @@ example.com {
 }
 ```
 
+### PF
+
+```
+pass in on egress proto tcp from any to any port 80 rdr-to localhost
+```
+
 ## OpenBSD HTTPD
 https://citizen428.net/blog/self-hosting-static-site-openbsd-httpd-relayd/
 https://dev.to/nabbisen/setting-up-openbsds-httpd-web-server-4p9f
