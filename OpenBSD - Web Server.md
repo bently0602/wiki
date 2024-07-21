@@ -18,7 +18,7 @@ doas -u _caddy /bin/ksh -l
 ### Download Caddy
 
 ```
-wget -O caddy https://caddyserver.com/api/download?os=openbsd&arch=amd64
+wget -q -O caddy https://caddyserver.com/api/download?os=openbsd&arch=amd64
 chmod +x caddy
 ```
 
