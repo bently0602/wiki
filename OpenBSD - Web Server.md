@@ -2,6 +2,22 @@
 
 ## Caddy
 
+## Modify privledged ports
+
+/etc/sysctl.conf
+
+```
+net.inet.ip.porthifirst=0
+net.inet.ip.porthilast=0
+```
+
+Reboot or run the below for immediate effect.
+
+```
+sysctl net.inet.ip.porthifirst=0
+sysctl net.inet.ip.porthilast=0
+```
+
 ### Create website folder
 
 ```
