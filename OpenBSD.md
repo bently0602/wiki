@@ -88,6 +88,7 @@ sysmerge -d
 ### Users
 
 #### Add User
+
 ```useradd -m -s /bin/sh username```
 
 The account will not be able to be logged into with out a password. Note that daemon users should start with an underscore by convention.
@@ -95,7 +96,10 @@ The account will not be able to be logged into with out a password. Note that da
 -m gives a home directory
 
 #### Userinfo
+
 `userinfo username`
+
+`id`
 
 #### Change User Password
 ```passwd username```
