@@ -112,6 +112,10 @@ chown -R _caddy:_caddy /var/log/caddy
 chmod -R 770 /var/log/caddy
 ```
 
+Note directory permission needs execute.
+
+https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFileSystem/Articles/BSDInfluences.html
+
 ### rc.d
 
 /etc/rc.d/caddy
