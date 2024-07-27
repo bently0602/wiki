@@ -90,9 +90,12 @@ sysmerge -d
 #### Add User
 ```useradd -m -s /bin/sh username```
 
-The account will not be able to be logged into with out a password.
+The account will not be able to be logged into with out a password. Note that daemon users should start with an underscore by convention.
 
 -m gives a home directory
+
+#### Userinfo
+`userinfo username`
 
 #### Change User Password
 ```passwd username```
@@ -118,6 +121,7 @@ https://www.digitalocean.com/community/tutorials/how-to-configure-packet-filter-
 http://webcache.googleusercontent.com/search?q=cache:mTbhAKM1zTMJ:rtate.se/technology/bsd/guide/2016/06/20/SSHGuard-OpenBSD.html&cd=5&hl=en&ct=clnk&gl=us&client=safari
 
 https://www.openbsd.org/faq/faq15.html
+https://www.openbsd.org/faq/faq10.html
 
 OpenBSD Handbook:
 https://www.openbsdhandbook.com/openbsd_for_linux_users/
