@@ -16,6 +16,12 @@ Name = "_caddy" Home = "/home/caddy"
 useradd -g =uid -c "Caddy service user" -L daemon -s /sbin/nologin -d /home/caddy -m _caddy
 ```
 
+If you ever need to login as that user from root to test something then:
+
+```
+doas -u _caddy /bin/ksh -l
+```
+
 ### PF Config
 
 ```
@@ -62,8 +68,9 @@ chmod +x /usr/local/sbin/caddy
 ```
 {
 	log default {
-		output file /var/log/caddy
+		output file /var/log/caddy/current.log
 		format json
+		level ERROR
 	}
 
         https_port 8443
@@ -95,6 +102,14 @@ https://www.example.com:8443 {
         encode gzip
         file_server
 }
+```
+
+### Logging
+
+```
+mkdir -p /var/log/caddy
+chown -R _caddy:_caddy /var/log/caddy
+chmod -R 660 /var/log/caddy
 ```
 
 ### rc.d
