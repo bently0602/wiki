@@ -137,79 +137,8 @@ rcctl -d enable caddy
 rcctl -d start caddy
 ```
 
-### OLD
-Login as User
-
-```
-doas -u _caddy /bin/ksh -l
-```
-
-Download Caddy
-
-```
-wget -q -O caddy https://caddyserver.com/api/download?os=openbsd&arch=amd64
-chmod +x caddy
-```
-
-Back as root
-
-```
-exit
-```
-
-PF
-
-```
-pass in on egress proto tcp from any to any port 80 rdr-to 127.0.0.1 port 8080
-```
-
-Caddyfile
-
-/etc/Caddyfile
-
-```
-{
-	log default {
-		output stdout
-		format json
-		include http.log.access admin.api
-	}
-}
-
-http://example.com:8080 {
-        root * /var/www/htdocs/example.com
-        encode gzip
-        file_server
-}
-http://www.example.com:8080 {
-        root * /var/www/htdocs/example.com
-        encode gzip
-        file_server
-}
-```
-
-/etc/rc.d/caddy
-```
-#!/bin/ksh
-
-daemon="/home/caddy/caddy"
-daemon_user="_caddy"
-daemon_flags="run --config /etc/Caddyfile"
-
-. /etc/rc.d/rc.subr
-
-rc_bg=YES
-rc_reload=NO
-
-rc_cmd $1
-```
-
-chmod 0555 /etc/rc.d/searxng
-rcctl -d enable searxng
-rcctl -d start searxng
-
-
-
 ## OpenBSD HTTPD
+
 https://citizen428.net/blog/self-hosting-static-site-openbsd-httpd-relayd/
+
 https://dev.to/nabbisen/setting-up-openbsds-httpd-web-server-4p9f
