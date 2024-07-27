@@ -5,8 +5,8 @@
 ### Create website folder
 
 ```
-mkdir /var/www/htdocs/example.com
-echo "<b>TEST</b>" >> /var/www/htdocs/example.com/index.html
+mkdir /var/www/htdocs/{example.com}
+echo "<b>TEST</b>" >> /var/www/htdocs/{example.com}/index.html
 ```
 
 ### Create Service User
@@ -14,6 +14,38 @@ echo "<b>TEST</b>" >> /var/www/htdocs/example.com/index.html
 Name = "_caddy" Home = "/home/caddy"
 ```
 useradd -g =uid -c "Caddy service user" -L daemon -s /sbin/nologin -d /home/caddy -m _caddy
+```
+
+### PF Config
+
+```
+# Skip filtering on the loopback interface (lo0)
+set skip on lo0
+
+# Block all traffic by default
+block all
+
+# rdr pass on "vio0"  proto tcp from any to any port 80 -> 127.0.0.1 port 80
+pass in quick proto { tcp udp } to port 80 rdr-to 127.0.0.1 port 8080
+pass in quick proto { tcp udp } to port 443 rdr-to 127.0.0.1 port 8443
+pass out proto { tcp udp } from 127.0.0.1 to any port 80
+pass out proto { tcp udp } from 127.0.0.1 to any port 443
+
+# Allow incoming TCP traffic to port 22 (SSH), 80 (HTTP), 443 (HTTPS)
+pass in proto { tcp udp } to port { 22 80 443 }
+
+# Allow outgoing TCP and UDP traffic to ports 22 (SSH), 53 (DNS), 80 (HTTP), 123 (NTP), 443 (HTTPS)
+pass out proto { tcp udp } to port { 22 53 80 123 443 }
+
+# Allow outgoing ICMP traffic for echo requests (ping)
+pass out inet proto icmp icmp-type { echoreq }
+
+# Block and log outgoing TCP and UDP traffic for the user _pbuild, returning an error message
+block return out log proto {tcp udp} user _pbuild
+```
+
+```
+pfctl -f /etc/pf.conf
 ```
 
 ### Download Caddy
@@ -33,14 +65,32 @@ chmod +x /usr/local/sbin/caddy
 		output file /var/log/caddy
 		format json
 	}
+
+        https_port 8443
+        http_port 8080
+
+	admin off
 }
 
-https://example.com {
+http://example.com:8080 {
+        bind 127.0.0.1
+        header Content-Type text/html
+        respond <<HTML
+                <html>
+                        <head><title>Foo</title></head>
+                        <body>Foo</body>
+                </html>
+                HTML 200
+}
+
+https://example.com:8443 {
+	bind 127.0.0.1
         root * /var/www/htdocs/example.com
         encode gzip
         file_server
 }
-https://www.example.com {
+https://www.example.com:8443 {
+	bind 127.0.0.1
         root * /var/www/htdocs/example.com
         encode gzip
         file_server
