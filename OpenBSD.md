@@ -15,7 +15,7 @@ Recommend you dont do this. Shells are installed in /usr/local/bin. KSH is in /b
 
 ### Base configuration
 
-pfctl is the main firewall command.
+pfctl is the main firewall command. Note that pf is enabled by default on OpenBSD (check rc.conf).
 
 1. Modify /etc/pf.conf 
 2. Add: 
@@ -72,6 +72,9 @@ pfctl -f /etc/pf.conf
 
 ### Configuration Merge Diff
 `sysmerge -d`
+
+### Version Upgrade
+`sysupgrade`
 
 ### Typical Update
 ```
