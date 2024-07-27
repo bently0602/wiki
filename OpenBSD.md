@@ -116,10 +116,12 @@ http://webcache.googleusercontent.com/search?q=cache:mTbhAKM1zTMJ:rtate.se/techn
 
 https://www.openbsd.org/faq/faq15.html
 
+OpenBSD Handbook:
 https://www.openbsdhandbook.com/openbsd_for_linux_users/
-
 https://www.openbsdhandbook.com/system_management/updates/
 
 https://docs.vultr.com/introduction-to-doas-on-openbsd
 
+Some useful documentation on general users:
+https://wiki.ircnow.org/index.php?n=Openbsd.FilePermissions
 
