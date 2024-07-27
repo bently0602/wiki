@@ -109,7 +109,7 @@ https://www.example.com:8443 {
 ```
 mkdir -p /var/log/caddy
 chown -R _caddy:_caddy /var/log/caddy
-chmod -R 660 /var/log/caddy
+chmod -R 770 /var/log/caddy
 ```
 
 ### rc.d
