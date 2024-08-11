@@ -1,0 +1,7 @@
+- `groupadd sftpgroup`
+- add or modify user
+  - Add adduser senthil -g sftpgroup -s /sbin/nologin THEN passwd tecmint
+  - Modify user usermod -G sftpgroup tecmint
+
+
+https://www.tecmint.com/restrict-sftp-user-home-directories-using-chroot/
