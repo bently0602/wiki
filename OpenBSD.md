@@ -1,5 +1,11 @@
 # OpenBSD
 
+## Get OpenBSD version
+
+```
+uname -r
+```
+
 ## Add packages 
 `pkg_add vim`
 
