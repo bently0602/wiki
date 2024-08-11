@@ -11,6 +11,17 @@
 
 Recommend you dont do this. Shells are installed in /usr/local/bin. KSH is in /bin
 
+## Services
+
+rcctl ls all | more
+
+rcctl restart|start|stop|check servicename
+
+### Change SSHD port
+
+Most configuration is in /etc. Edit "/etc/ssh/sshd_config" and change port number.
+
+
 ## Firewall 
 
 ### Base configuration
