@@ -13,14 +13,19 @@ Recommend you dont do this. Shells are installed in /usr/local/bin. KSH is in /b
 
 ## Services
 
+List services:
+```
 rcctl ls all | more
+```
 
+Action on services:
+```
 rcctl restart|start|stop|check servicename
+```
 
 ### Change SSHD port
 
 Most configuration is in /etc. Edit "/etc/ssh/sshd_config" and change port number.
-
 
 ## Firewall 
 
@@ -38,7 +43,7 @@ set skip on lo0
 block all
  
 # Allow incoming TCP traffic to port 22 (SSH), 80 (HTTP), 443 (HTTPS)
-pass in proto tcp to port { 22 80 443 }
+pass in proto { tcp udp } to port { 22 80 443 }
 
 # Allow outgoing TCP and UDP traffic to ports 22 (SSH), 53 (DNS), 80 (HTTP), 123 (NTP), 443 (HTTPS)
 pass out proto { tcp udp } to port { 22 53 80 123 443 }
