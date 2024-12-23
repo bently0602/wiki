@@ -1,4 +1,47 @@
-- `groupadd sftpgroup`
+`
+groupadd sftpusers
+`
+
+`
+cat >> /etc/login.conf <<EOM
+
+sftp:\\
+    :datasize-max=50M:\\
+    :maxproc=16:\\
+    :requirehome:\\
+    :tc=default:
+EOM
+`
+
+`
+cat >> /etc/ssh/sshd_config <<EOM
+
+Match Group sftpusers
+    ChrootDirectory /home/%u
+    ForceCommand internal-sftp
+    AllowTcpForwarding no
+    X11Forwarding no
+EOM
+`
+
+	•	ChrootDirectory /home/%u: Restricts the user to their home directory.
+	•	ForceCommand internal-sftp: Forces the user to use SFTP only.
+	•	AllowTcpForwarding no: Prevents port forwarding.
+	•	X11Forwarding no: Disables X11 forwarding.
+
+`
+useradd -L sftp -g sftpusers -s /sbin/nologin -d /home/sftpuser -m sftpuser
+`
+
+`
+cap_mkdb /etc/login.conf
+`
+
+
+
+
+
+
 - add or modify user
   - Add adduser senthil -g sftpgroup -s /sbin/nologin THEN passwd tecmint
   - Modify user usermod -G sftpgroup tecmint
